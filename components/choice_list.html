@@ -1,0 +1,20 @@
+
+
+<!--Template-->
+<div>
+  <section>
+  <ul> 
+   <li ng-animate="'animate'" class="itemHolder" ng-repeat="item in choiceList" >
+    <a href="#/choice/{{choiceList.indexOf(item)}}">
+        <div>
+
+            <h3> {{item.name }}</h3>
+            <p class="rightDate">{{item.date | date:'MM/yy'}}</p>
+            <p> {{item.description}}</p>
+
+        </div>
+    </a>
+   </li>
+  </ul>
+  </section>
+</div>
