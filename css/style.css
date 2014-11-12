@@ -29,7 +29,7 @@ p {
 		font-size: 15px;
 		font-weight: bold;
 		font-style: italic;
-		color: rgb(237, 235, 235);
+		color: rgb(0,0,0);
 		margin: 18px;
 }
 
@@ -67,9 +67,7 @@ li a {
 		text-shadow: 1px 0px 3px rgb(157, 157, 157);
 }
 
-li:nth-child(1) { border-radius: 4px 0px 0px 4px; margin-left: 1px;}
-	
-li:nth-child(4) { border-radius: 0px 4px 4px 0px;}
+
 
 .active {
 		background-color: #27709b;
@@ -127,4 +125,31 @@ section div.detailcontainer div.graphSide{
     float: left;
 }
 
-section div.descriptionSide
+section div.descriptionSide span{
+    position: relative;
+    left: 30px;
+}
+
+nav.navbar span{
+    color: white;
+    text-align: center;
+    position: relative;
+    left: 40%;
+}
+
+a.navbar-brand div.intuit-logo{
+    color: gray;
+font-size: 25px;
+position: relative;
+top: 5px;
+display: inline;
+}
+
+div.detailcontainer div.graphSide .payrollDetail .ng-scope{
+    width:50%;
+}
+
+div.detailcontainer div.graphSide .payrollDetail .ng-scope:nth-child(n+1){
+    float:right;
+    height: 185px;
+}

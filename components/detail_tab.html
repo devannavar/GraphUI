@@ -20,15 +20,20 @@
         </li>
     </ul>
 <br />
-				
+    
+    
+	<!--QBDT Details-->
+    
     <div ng-show="panel.isSelected(1)">
       <div class="detailcontainer">
        <div class="graphSide">
+        
+           <div ng-repeat="item in graphData" id="graphId{{graphData.indexOf(item)}}"                   ng-dblclick="panel.openDialog('graphId{{graphData.indexOf(item)}}')">
             <nvd3-multi-bar-chart
-                data="graphData"
-                id="graphId1"
+                data=item.data
+                id="graphId1{{graphData.indexOf(item)}}"
                 width="600"
-                height="600"
+                height="300"
                 tooltips="true"
                 showXAxis="true"
                 showYAxis="true"
@@ -37,25 +42,145 @@
                 >
             <svg></svg>
             </nvd3-multi-bar-chart>
+           </div>
+          
        </div>
        <div class="descriptionSide">
            <h2>Statistics</h2>
-           <div ng-repeat="item in graphData">
+           <div ng-repeat="graphDataItem in graphData">
+               <h4>--{{graphDataItem.header}}--</h4>
+               <div ng-repeat="item in graphDataItem.data">
+                   <br/>
+                   <h4>Number of {{item.key}} customer on payroll:<span>{{item.values[0][1]}}                </span> </h4>
+
+               </div>
                <br/>
-               <h4>Number of {{item.key}} customer on payroll:<span>{{item.values[0][1]}}</span> </h4>
-               
            </div>
-       </div>
+          </div>
+        </div>
     </div>
-    </div>
+    
+    
+    <!--Payroll Details-->
+    
     <div ng-show="panel.isSelected(2)">
-        Payroll Details
+       <div class="detailcontainer">
+       <div class="graphSide">
+        <div class="payrollDetail"  >
+           <div ng-repeat="item in graphDataForPayroll" id="graphId{{graphDataForPayroll.indexOf(item)}}"                                           ng-dblclick="panel.openDialog('graphId{{graphDataForPayroll.indexOf(item)}}')">
+                <nvd3-multi-bar-chart
+                    data=item.data
+                    id="graphId2{{graphDataForPayroll.indexOf(item)}}"
+                    width="600"
+                    height="300"
+                    tooltips="true"
+                    showXAxis="true"
+                    showYAxis="true"
+                    showValues="true"
+                    showLegend="true"
+                    >
+                <svg></svg>
+                </nvd3-multi-bar-chart>
+               </div>
+
+        </div>
+       </div>   
+    
+       <div class="descriptionSide">
+           <h2>Statistics</h2>
+           <div ng-repeat="graphDataItem in graphDataForPayroll">
+               <h4>--{{graphDataItem.header}}--</h4>
+               <div ng-repeat="item in graphDataItem.data">
+                   <br/>
+                   <h4>Number of {{item.key}} customer on payroll:<span>{{item.values[0][1]}}                </span> </h4>
+
+               </div>
+               <br/>
+           </div>
+          </div>
+        </div>
     </div>
+    
+    
+    
+    <!-- Payroll Service Detail -->
+    
     <div ng-show="panel.isSelected(3)">
-        Payroll Services
+        <div class="detailcontainer">
+            <div class="graphSide">
+        
+           <div ng-repeat="item in PayrollServiceData" id="graphId{{PayrollServiceData.indexOf(item)}}"                   ng-dblclick="panel.openDialog('graphId{{PayrollServiceData.indexOf(item)}}')">
+           
+               <nvd3-stacked-area-chart
+                    data="item.data"
+                    id="graphId3{{PayrollServiceData.indexOf(item)}}"
+                    showXAxis="true"
+                    showYAxis="true"
+                    showLegend="true"
+                    tooltips="true"
+                    interactive="true"
+                    useInteractiveGuideline="true"
+                    toolTipContent="toolTipContentFunction()"
+                    xAxisTickFormat="xAxisTickFormat()">
+                <svg></svg>
+                </nvd3-stacked-area-chart>
+               
+
+           </div>
+          
+       </div>
+       <div class="descriptionSide">
+           <h2>Statistics</h2>
+           <div ng-repeat="graphDataItem in graphData">
+               <h4>--{{graphDataItem.header}}--</h4>
+               <div ng-repeat="item in graphDataItem.data">
+                   <br/>
+                   <h4>Number of {{item.key}} customer on payroll:<span>{{item.values[0][1]}}                </span> </h4>
+
+               </div>
+               <br/>
+           </div>
+          </div>
+        </div>
     </div>
+    
+    <!--Money Movement Details-->
+    
     <div ng-show="panel.isSelected(4)">
-        Money Movement
+    <div class="detailcontainer">
+       <div class="graphSide">
+        <div class="payrollDetail"  >
+          
+           <div ng-repeat="item in graphDataMoneyMovement" id="graphId{{graphDataMoneyMovement.indexOf(item)}}"                   ng-dblclick="panel.openDialog('graphId{{graphDataMoneyMovement.indexOf(item)}}')">
+            <nvd3-multi-bar-chart
+                data=item.data
+                id="graphId4{{graphDataMoneyMovement.indexOf(item)}}"
+                width="600"
+                height="300"
+                tooltips="true"
+                showXAxis="true"
+                showYAxis="true"
+                showValues="true"
+                showLegend="true"
+                >
+            <svg></svg>
+            </nvd3-multi-bar-chart>
+           </div>
+        </div>
+       </div>
+       <div class="descriptionSide">
+           <h2>Statistics</h2>
+           <div ng-repeat="graphDataItem in graphData">
+               <h4>--{{graphDataItem.header}}--</h4>
+               <div ng-repeat="item in graphDataItem.data">
+                   <br/>
+                   <h4>Number of {{item.key}} customer on payroll:<span>{{item.values[0][1]}}                </span> </h4>
+
+               </div>
+               <br/>
+           </div>
+          </div>
+        </div>
     </div>
 <br />
  

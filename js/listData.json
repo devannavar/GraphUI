@@ -26,10 +26,15 @@
 
 },
 {
-	"name" : "Custom",
-	"description" : "Custom report of PSP data",
+	"name" : "Performance",
+	"description" : "Performance report of PSP data",
+	"date":"12/03/2014"
+
+},
+{
+	"name" : "Differential Analysis",
+	"description" : "Differential Analysis of PSP data",
 	"date":"12/03/2014"
 
 }
-
 ]

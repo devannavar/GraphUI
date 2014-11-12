@@ -8,14 +8,15 @@
 	<title>PSP Analysis</title>
     <meta charset="UTF-8">
     
-    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="vendor/angular/angular.min.js" type="text/javascript" ></script>
 	<script src="vendor/angular/angular-route.min.js" type="text/javascript" ></script>
 	<script src="vendor/angular/angular-animate.js" type="text/javascript" ></script>
     <script src="vendor/d3/d3.js"></script>
     <script src="vendor/nvd3/nv.d3.js"></script>
     <script src="vendor/nvd3/angularjs-nvd3-directives.js"></script>
-   
+    <script src="vendor/ngDialog/ngDialog.min.js"></script>
+    
     
 
 	<script src="js/app.js" type="text/javascript" ></script>
@@ -24,9 +25,22 @@
     <link rel="stylesheet" type="text/css" href="vendor/stylesheets/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="vendor/stylesheets/nv.d3.css"/>
+    <link rel="stylesheet" href="vendor/stylesheets/ngDialog.css"/>
+    
 
 </head>
 <body>
+<nav class="navbar" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+          <div class="intuit-logo">Intuit</div>
+        <span>Payroll Service Platform Analytics</span>
+      </a>
+
+    </div>
+  </div>
+</nav>
 <div class="main" ng-view>
 		<!--This is the main template load the components here-->
 </div>
